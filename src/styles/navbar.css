@@ -1,0 +1,95 @@
+.navbar {
+    min-height: 44px;
+    color: #f2f4ed;
+    background: #101c16;
+}
+
+.navbar__inner {
+    display: flex;
+    width: min(100%, 1240px);
+    min-height: 44px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar__brand {
+    display: inline-flex;
+    min-width: max-content;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.navbar__wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.navbar__wordmark strong {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.navbar__wordmark small {
+    color: #a6b0a7;
+    font-size: 7px;
+}
+
+.navbar__nav {
+    display: flex;
+    height: 44px;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.navBar-link{
+     text-decoration: none;
+    color:white
+    
+}
+
+
+
+.navbar__theme-switch {
+    display: flex;
+    align-items: center;
+}
+
+.day-night-toggle {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 560px) {
+    .navbar__inner {
+        flex-wrap: wrap;
+        gap: 0 14px;
+        padding: 0 12px;
+    }
+
+    .navbar__brand {
+        flex: 1;
+        min-height: 42px;
+    }
+
+    .navbar__wordmark small {
+        display: none;
+    }
+
+    .navbar__nav {
+        order: 3;
+        width: 100%;
+        height: 38px;
+        gap: 18px;
+    }
+
+    .navbar__link.is-active::after {
+        bottom: 3px;
+    }
+}

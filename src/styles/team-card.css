@@ -1,0 +1,104 @@
+.team-card {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  min-height: 130px;
+  flex-direction: column;
+  padding: 11px 12px 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--team-accent);
+  border-radius: 5px;
+  background: var(--surface);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.team-card:hover {
+  border-color: color-mix(in srgb, var(--team-accent) 48%, var(--line));
+  transform: translateY(-1px);
+}
+
+.team-card__topline {
+  display: flex;
+  min-height: 23px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.team-card__city {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 7px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.team-card__badge {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+  place-items: center;
+  margin-top: -1px;
+  border: 1px solid var(--team-accent);
+  border-radius: 50%;
+  color: var(--team-accent);
+  background: color-mix(in srgb, var(--team-accent) 8%, var(--surface));
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.team-card__name {
+  margin: 0 36px 8px 0;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.team-card__description {
+  min-height: 30px;
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.team-card__facts {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: auto 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.team-card__fact {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.team-card__fact:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.team-card__fact dt {
+  color: var(--muted);
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.team-card__fact dd {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+}

@@ -1,0 +1,68 @@
+:root {
+  font-family: "Arial Narrow", "Avenir Next Condensed", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  color: #18211c;
+  background: #f5f5ef;
+
+  --page: #f5f5ef;
+  --surface: #fbfbf7;
+  --surface-muted: #e8eee6;
+  --ink: #18211c;
+  --muted: #788079;
+  --line: #dce1d8;
+  --accent: #13815e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--page);
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.app.dark {
+  color-scheme: dark;
+  --page: #151c18;
+  --surface: #1d2721;
+  --surface-muted: #27342c;
+  --ink: #edf1e9;
+  --muted: #a4aea5;
+  --line: #354139;
+  --accent: #63c49b;
+}
+
+.team-explorer {
+  width: min(100%, 1240px);
+  margin: 0 auto;
+  padding: 20px 22px 48px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr));
+  gap: 10px;
+  align-items: stretch;
+}
+
+@media (max-width: 560px) {
+  .team-explorer {
+    padding: 14px 12px 32px;
+  }
+}
