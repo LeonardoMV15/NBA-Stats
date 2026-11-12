@@ -17,7 +17,7 @@ function NavBar({ dark, onToggle }) {
             to="/about"
             className="navBar-link"
           >
-            About the archive
+            About Us
           </NavLink>
         </nav>
 

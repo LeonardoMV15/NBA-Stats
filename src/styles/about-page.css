@@ -1,0 +1,83 @@
+.about-page {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 48px 22px 64px;
+}
+
+.about-page__intro {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.about-page__eyebrow,
+.about-page__number {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.about-page__intro h1 {
+  margin: 14px 0;
+  font-size: clamp(36px, 7vw, 64px);
+  line-height: 0.98;
+}
+
+.about-page__intro h1 span {
+  color: var(--accent);
+}
+
+.about-page__lead {
+  max-width: 560px;
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.about-page__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.about-page__card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  border-radius: 5px;
+  background: var(--surface);
+}
+
+.about-page__card h2 {
+  margin: 18px 0 8px;
+  font-size: 20px;
+}
+
+.about-page__card p {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.about-page__quote {
+  margin: 24px 0 0;
+  padding: 18px 20px;
+  border-left: 2px solid var(--accent);
+  color: var(--ink);
+  background: var(--surface-muted);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .about-page {
+    padding: 32px 12px 40px;
+  }
+
+  .about-page__content {
+    grid-template-columns: 1fr;
+  }
+}

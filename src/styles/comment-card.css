@@ -1,0 +1,156 @@
+.comment-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--surface);
+  list-style: none;
+}
+
+.comment-card {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 42px 16px 14px;
+  overflow-wrap: anywhere;
+  border-left: 2px solid transparent;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.comment-card + .comment-card {
+  border-top: 1px solid var(--line);
+}
+
+.comment-card:hover {
+  border-left-color: var(--accent);
+  background: var(--surface-muted);
+}
+
+.comment-card__name {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.comment-card__text {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.comment-card__actions {
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.comment-card__action {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--muted);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.comment-card__action:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.comment-card__action:focus-visible,
+.comment-card__button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.comment-card__edit-form {
+  display: grid;
+  gap: 10px;
+}
+
+.comment-card__edit-label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.comment-card__edit-input {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  outline: none;
+  color: var(--ink);
+  background: var(--page);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 11px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.comment-card__edit-input:focus {
+  border-color: var(--accent);
+}
+
+.comment-card__edit-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.comment-card__edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.comment-card__button {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.comment-card__button--accept {
+  border-color: var(--accent);
+  color: var(--surface);
+  background: var(--accent);
+}
+
+.comment-card__button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.comment-card__error {
+  margin: 0;
+  color: #b42318;
+  font-size: 11px;
+}
