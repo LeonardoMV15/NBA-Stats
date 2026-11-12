@@ -1,15 +1,16 @@
 
 import TeamCard from "../components/TeamCard"
-import axios from "axios"
 import { useEffect, useState } from "react"
 import SearchBar from "../components/SearchBar.jsx"
 import "../styles/home-page.css"
+import api from "../services/api.js"
 
 
 function HomePage(){
 
      const [teams, setTeams] = useState([]);
-const [searchValue, setSearchValue] = useState("");
+     const [error, setError] = useState("");
+     const [searchValue, setSearchValue] = useState("");
 const [selectedZone, setSelectedZone] = useState("All");
 
 
@@ -29,9 +30,7 @@ const filteredTeams = teams.filter((team) => {
       useEffect(() => {
     async function getTeams() {
       try {
-        const response = await axios.get(
-          "VITE_API_URL/teams"
-        )
+        const response = await api.get("/teams")
         setTeams(response.data)
       } catch (error) {
         setError("No se pudieron cargar los equipos.")
@@ -42,6 +41,16 @@ const filteredTeams = teams.filter((team) => {
     getTeams()
   }, [])
 
+
+   if (error) {
+    return (
+      <main className="details-page">
+        <p className="details-page__message" role="alert">
+          {error}
+        </p>
+      </main>
+    );
+  }
 
    if (!teams) {
     return (

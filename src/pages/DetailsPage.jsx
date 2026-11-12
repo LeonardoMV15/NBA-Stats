@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
 import PlayersSideBar from "../components/PlayersSideBar.jsx";
 import PlayerInfo from "../components/PlayerInfo.jsx";
 import TeamInfo from "../components/TeamInfo.jsx";
 import "../styles/details-page.css";
 import Comment from "../components/CommentArea.jsx";
+import api from "../services/api.js";
 
 function DetailsPage() {
   const { teamId } = useParams();
@@ -28,9 +28,9 @@ function DetailsPage() {
       setError("");
 
       try {
-        const response = await axios.get(
-          `VITE_API_URL/teams/${teamId}?_embed=comments`,
-        );
+        const response = await api.get(`/teams/${teamId}`, {
+          params: { _embed: "comments" },
+        });
         if (active) setTeam(response.data);
       } catch (requestError) {
         if (active) {

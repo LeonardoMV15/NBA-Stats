@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CommentCard from "./CommentCard.jsx";
 import "../styles/comment-area.css";
-import axios from "axios";
+import api from "../services/api.js";
 
 
 function CommentArea({ team }) {
@@ -26,10 +26,7 @@ function CommentArea({ team }) {
     };
 
     try {
-      const response = await axios.post(
-        "VITE_API_URL/comments",
-        newComment,
-      );
+      const response = await api.post("/comments", newComment);
       setComments((current) => [...current, response.data]);
       setName("");
       setComment("");
@@ -43,9 +40,7 @@ function CommentArea({ team }) {
 
   async function handleDelete(commentId) {
     try {
-      await axios.delete(
-        `VITE_API_URL/comments/${commentId}`,
-      );
+      await api.delete(`/comments/${commentId}`);
       setComments((current) =>
         current.filter((comment) => comment.id !== commentId),
       );
@@ -65,10 +60,7 @@ function CommentArea({ team }) {
       ...currentComment,
       ...updates,
     };
-    const response = await axios.put(
-      `VITE_API_URL/comments/${commentId}`,
-      updatedComment,
-    );
+    const response = await api.put(`/comments/${commentId}`, updatedComment);
     setComments((current) =>
       current.map((item) => (item.id === commentId ? response.data : item)),
     );

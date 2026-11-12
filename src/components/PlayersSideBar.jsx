@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import "../styles/player-side-bar.css"
+import api from "../services/api.js";
 
 function PlayersSideBar({ team, selectedPlayer, onSelectPlayer }) {
   const { teamId } = useParams();
@@ -17,9 +17,9 @@ function PlayersSideBar({ team, selectedPlayer, onSelectPlayer }) {
       setError("");
 
       try {
-        const response = await axios.get(
-          `VITE_API_URL/players?teamId=${teamId}`,
-        );
+        const response = await api.get("/players", {
+          params: { teamId },
+        });
         if (active) setPlayers(response.data);
       } catch (requestError) {
         if (active) {

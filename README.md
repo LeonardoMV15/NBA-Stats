@@ -1,16 +1,33 @@
-# React + Vite
+# NBA Stats
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NBA teams, players, and comments frontend built with React and Vite.
 
-Currently, two official plugins are available:
+## Backend configuration
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Set `VITE_API_URL` to the backend base URL in a local environment file such as
+`.env.local`:
 
-## React Compiler
+```env
+VITE_API_URL=https://your-backend.example.com
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Vite reads this variable when starting the development server and when building
+the app. Restart the dev server after changing the value. For deployment, add
+the same variable to the hosting provider's environment settings and rebuild.
 
-## Expanding the ESLint configuration
+The `VITE_` prefix makes the value available in browser code, so do not put
+secrets in this variable.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Development
+
+```sh
+npm install
+npm run dev
+```
+
+## Build and lint
+
+```sh
+npm run build
+npm run lint
+```
