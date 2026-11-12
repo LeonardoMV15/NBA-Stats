@@ -29,7 +29,7 @@ function DetailsPage() {
 
       try {
         const response = await axios.get(
-          `https://json-server-project2.onrender.com/teams/${teamId}?_embed=comments`,
+          `VITE_API_URL/teams/${teamId}?_embed=comments`,
         );
         if (active) setTeam(response.data);
       } catch (requestError) {

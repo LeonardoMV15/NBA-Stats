@@ -30,7 +30,7 @@ const filteredTeams = teams.filter((team) => {
     async function getTeams() {
       try {
         const response = await axios.get(
-          "https://json-server-project2.onrender.com/teams"
+          "VITE_API_URL/teams"
         )
         setTeams(response.data)
       } catch (error) {

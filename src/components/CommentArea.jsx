@@ -27,7 +27,7 @@ function CommentArea({ team }) {
 
     try {
       const response = await axios.post(
-        "https://json-server-project2.onrender.com/comments",
+        "VITE_API_URL/comments",
         newComment,
       );
       setComments((current) => [...current, response.data]);
@@ -44,7 +44,7 @@ function CommentArea({ team }) {
   async function handleDelete(commentId) {
     try {
       await axios.delete(
-        `https://json-server-project2.onrender.com/comments/${commentId}`,
+        `VITE_API_URL/comments/${commentId}`,
       );
       setComments((current) =>
         current.filter((comment) => comment.id !== commentId),
@@ -66,7 +66,7 @@ function CommentArea({ team }) {
       ...updates,
     };
     const response = await axios.put(
-      `https://json-server-project2.onrender.com/comments/${commentId}`,
+      `VITE_API_URL/comments/${commentId}`,
       updatedComment,
     );
     setComments((current) =>

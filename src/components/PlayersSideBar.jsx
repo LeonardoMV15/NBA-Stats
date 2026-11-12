@@ -18,7 +18,7 @@ function PlayersSideBar({ team, selectedPlayer, onSelectPlayer }) {
 
       try {
         const response = await axios.get(
-          `https://json-server-project2.onrender.com/players?teamId=${teamId}`,
+          `VITE_API_URL/players?teamId=${teamId}`,
         );
         if (active) setPlayers(response.data);
       } catch (requestError) {
